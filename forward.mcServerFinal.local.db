@@ -1,0 +1,35 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	mcServerFinal. root.mcServerFinal. (
+			      5		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	localhost.
+@	IN	A	127.0.0.1
+@	IN	AAAA	::1
+
+;Name Server Information
+
+@        IN      NS      ns1.mcServerFinal.local.
+
+;IP address of Name Server
+
+ns1     IN      A       192.168.0.119
+
+;Mail Exchanger
+
+mcServerFinal.local.   IN     MX   10   mail.mcServerFinal.local.
+
+;A – Record HostName To Ip Address
+
+www     IN       A      192.168.0.118
+mail    IN       A      192.168.0.118
+
+;CNAME record
+
+ftp     IN      CNAME   www.mcServerFinal.local.
