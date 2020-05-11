@@ -1,0 +1,26 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	mcServerFinal. root.mcServerFinal. (
+			      6		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+;@	IN	NS	localhost.
+;1.0.0	IN	PTR	localhost.
+
+;Name Server Information
+
+@       IN      NS     ns1.mcServerFinal.local.
+
+;Reverse lookup for Name Server
+
+119      IN      PTR    ns1.mcServerFinal.local.
+
+;PTR Record IP address to HostName
+
+118     IN      PTR    www.mcServerFinal.local.
+118     IN      PTR    mail.mcServerFinal.local.
